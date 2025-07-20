@@ -84,9 +84,13 @@
 			<artifactId>mysql-connector-j</artifactId>
 			<version>8.0.33</version>
 		</dependency>
+		<!--lombok-->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.32</version> <!-- versione aggiornata al 2025 -->
+		</dependency>
 	</dependencies>
-
-
 	<build>
 		<plugins>
 			<plugin>

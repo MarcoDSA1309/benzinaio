@@ -1,0 +1,17 @@
+spring.application.name=benzina
+server.port=****
+
+#dev-tools
+spring.devtools.add-properties = *** configurati spring devtools come meglio credi
+spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration **login avvio applicazione**
+
+# Connessione al DB
+spring.datasource.url=jdbc:****
+spring.datasource.username=**
+spring.datasource.password=****
+
+# Hibernate
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect

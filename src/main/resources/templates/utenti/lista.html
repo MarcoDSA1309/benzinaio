@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lista Utenti</title>
+</head>
+<body>
+
+<h1>Lista Utenti</h1>
+
+<table border="1" cellpadding="5" cellspacing="0">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Username</th>
+    <th>Surname</th>
+    <th>Phone</th>
+    <th>Creation Date</th>
+    <th>Modified Date</th>
+    <th>Azioni</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="utente : ${utenti}">
+    <td th:text="${utente.id}">1</td>
+    <td th:text="${utente.username}">username</td>
+    <td th:text="${utente.surname}">surname</td>
+    <td th:text="${utente.phone}">phone</td>
+    <td th:text="${utente.creationDate}">2025-07-06 10:00</td>
+    <td th:text="${utente.modifiedDate}">2025-07-06 12:00:222</td>
+    <td>
+      <a th:href="@{'/utenti/elimina/' + ${utente.id}}"
+         onclick="return confirm('Sei sicuro di voler eliminare questo utente?');">Elimina</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<p><a th:href="@{/utenti/nuovo}">Aggiungi nuovo utente</a></p>
+
+</body>
+</html>
