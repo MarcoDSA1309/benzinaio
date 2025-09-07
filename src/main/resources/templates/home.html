@@ -2,13 +2,108 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+
+    <!-- jQuery from CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap 5 JS Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" th:href="@{/home/css/style.css}">
+    <script src="home/js/main.js"></script>
+
     <title>Home - Benzinai</title>
 </head>
 <body>
-<h1>Benvenuto nel Portale dei Benzinai</h1>
 
-<p>Questa è la home page del progetto Spring Boot per la gestione dei benzinai in Italia.</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Distributori in Italia</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <button id="darkModeToggle" class="btn btn-sm btn-secondary">Toggle Dark Mode</button>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Cerca</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Info</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <!-- Left empty space on large screens -->
+        <div class="d-none d-lg-block col-lg-2"></div>
+
+        <section class="py-5 bg-white text-center">
+            <div class="container">
+                <h1 class="display-4">Costi carburante in Italia</h1>
+            </div>
+
+            <p>Data aggiornamento: <span th:text="${dataAggiornamento}">Data non disponibile</span></p>
+        </section>
+
+        <section class="bg-image-blur text-white d-flex align-items-center" style="height: 400px;">
+            <div class="container text-center">
+                <h2>Ultimi aggiornamenti sui prezzi</h2>
+                <p>Scopri i distributori più convenienti nella tua zona</p>
+                <a href="/cerca" class="btn btn-primary rounded-pill mt-3 px-4 py-2">
+                    Vai alla ricerca
+                </a>
+            </div>
+        </section>
+
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h2 class="mb-4 text-center">Fonte dei Dati</h2>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-10">
+                        <p>
+                            I dati mostrati in questa piattaforma provengono dal
+                            <strong>Ministero dello Sviluppo Economico italiano</strong> (MISE),
+                            tramite l'osservatorio prezzi carburanti.
+                        </p>
+
+                        <p>
+                            Ogni stazione di rifornimento è obbligata per legge a comunicare
+                            i prezzi praticati per ogni tipo di carburante (Benzina, Diesel, GPL, Metano, ecc.)
+                            su base giornaliera.
+                        </p>
+
+                        <p>
+                            I prezzi vengono aggiornati ufficialmente alle
+                            <strong>8:00 del mattino</strong> e possono variare durante la giornata.
+                            Tuttavia, la piattaforma mostra l’ultimo prezzo disponibile comunicato da ciascun impianto.
+                        </p>
+
+                        <p>
+                            L’accuratezza dei dati è garantita dalla comunicazione diretta tra le stazioni di servizio
+                            e il portale ministeriale, con aggiornamenti resi pubblici in tempo reale.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
+        <!-- Right empty space on large screens -->
+        <div class="d-none d-lg-block col-lg-2"></div>
+    </div>
+</div>
 </body>
 </html>

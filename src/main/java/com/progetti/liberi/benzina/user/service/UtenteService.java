@@ -11,6 +11,5 @@ public interface UtenteService {
     Optional<Utente> findByUsername(String username);
     Utente save(Utente utente);
     void deleteById(Long id);
-
     Utente registerUser(Utente utente);
 }
